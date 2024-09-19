@@ -90,7 +90,7 @@ jobs:
           curl -sSL -o argocd-linux-amd64 https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
           install -m 555 argocd-linux-amd64 /usr/local/bin/argocd
           rm argocd-linux-amd64
-          argocd cluster add k3d-argocd-teste-config --server argocd.apr.vee.codes --auth-token ${{ secret.ARGOCD_TOKEN }}
+          argocd cluster add k3d-argocd-teste-config --server argocd.apr.vee.codes --auth-token ${{ secrets.ARGOCD_TOKEN }}
 
       - name: Upload kube config
         uses: actions/upload-artifact@v4
